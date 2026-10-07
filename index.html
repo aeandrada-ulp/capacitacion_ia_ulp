@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ingreso a comisiones</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#f6f7fb;--card:#fff;--tx:#1b2030;--mut:#5d6578;--ac:#1f6feb;--wa:#1a9e4b;--bd:#dde1ea}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#12151d;--card:#1b2030;--tx:#eef0f6;--mut:#9aa3b8;--ac:#5b9bff;--wa:#3ecb7a;--bd:#2c3347}}
+:root[data-theme="dark"]{--bg:#12151d;--card:#1b2030;--tx:#eef0f6;--mut:#9aa3b8;--ac:#5b9bff;--wa:#3ecb7a;--bd:#2c3347}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:900px;margin:0 auto;padding:28px 16px 40px}
+h1{font-size:1.6rem;margin:0 0 6px}
+.sub{color:var(--mut);margin:0 0 18px}
+input{width:100%;padding:14px 16px;font-size:1.05rem;border:1px solid var(--bd);border-radius:12px;background:var(--card);color:var(--tx);margin-bottom:18px}
+input:focus{outline:2px solid var(--ac)}
+#grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.c{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:14px}
+.c h2{font-size:1.05rem;margin:0}
+.c .d{color:var(--mut);font-size:.88rem;margin:2px 0 12px;min-height:1.2em}
+.b{display:flex;gap:8px}
+.b a{flex:1;text-align:center;padding:10px 6px;border-radius:10px;color:#fff;text-decoration:none;font-weight:600;font-size:.92rem}
+.m{background:var(--ac)}.w{background:var(--wa)}
+.b a:hover{opacity:.88}
+.aula{display:block;text-align:center;padding:14px;margin-bottom:18px;background:var(--card);border:2px solid var(--ac);border-radius:12px;color:var(--ac);font-weight:700;text-decoration:none}
+.aula:hover{background:var(--ac);color:#fff}
+#none{display:none;color:var(--mut)}
+</style>
+</head>
+<body>
+<main>
+<h1>Ingresá a tu comisión</h1>
+<p class="sub">Buscá tu número de comisión o el apellido de tu docente, y entrá a Meet o al grupo de WhatsApp.</p>
+<a class="aula" target="_blank" rel="noopener" href="http://cursos.ulp.edu.ar/">Ir al aula virtual (general)</a>
+<input id="q" type="search" placeholder="Ej: 07 o Parma" autocomplete="off">
+<div id="grid"></div>
+<p id="none">No se encontró esa comisión.</p>
+</main>
+<script>
+var W=["F8Ta8vfxALH7gOGLOFrm5g","FwfgrqS1e80I7ehZbTYPC2","LvmDcsLNV2kEE3OffGegaE","HmnzBAeYlEx6EqqLApCY3r","JEe4769x1q0JmX9xj8iMGA","LxvvoY7liAtGFWSCW0rFTP","GmYy00LDCxn9LKnF5ZvShl","FaoBjvI1Sbg9olX7qjnct9","KINFEfchGgb8EWZOzULKHb","IedXXrWGssFHiPv2VeIreW","FRiKRkeRnx03IWEJuUO4qY","I5y7yjZYLDhHrgZuZhdAib","KUNljOkbTlg7t6vzvjeykG","CCvJgcDHG9vBsj3au4FOat","G7kao72kTwOL0xna27BxyZ","LKWXiLzOEnD0uoR7DwNoLr","DnFyzKDBZDzBBDHYqk6IW5","J4PLJ7QbpPnAwi2UF584oH","LxOJ9bvf1SW8CHIhZXpUjK","JGPoEOrqUel0p9RETjZvwb","BrEycDKssSuEvcn5f0fHPn","IcOyJUuflKx5YwHcQduOUe","CspTAx5yuzE0PYelIMM9SD","GK09MDaQLTv1oU8FkyEQeS","FNVVm0GkxIV8W9VuDUlT3A","Id0BYTHA4TcCOQVrh6BIBh","LmTKvpbyHHd6TB1lckxfgm","B4jwxd8mL3LJrrlpdK6qp1","EykXR2qScuFLHngfY3w8sG","BKZe3aNX8Lx9EunyFMhnqo","Fk332jZYoNAHM7hubBCmjR","KwUNrQHM0LBDsoO3MG0W1M","EpVCaaucOe55XVxKoyMXZl","LtS7E0ySsJR3Ugh2AKKKyX","HVpoXqtJHG6FXyOwjRjCTr","InTkS3GF7WWG0uFZ3TuhuD","EtITYnE7oeyAQM7LdlXGp7","BqXwulWqcKk48y3Z6TYLHA","CoOKXWGeGE82FlOXiTnLGe","JD0Pb36Ej2T7NDqFZG5FM2","IsjxpWKB9poHI9DWJhRwHh","HeFPnPMX66w40ISKJXaxFF"];
+var D={1:["Giboin, Francisco","ujm-xiio-tid"],2:["Latour, Florencia Solange","zrd-fbds-wyf"],3:["Bovio, Silvana","sos-xhay-prt"],4:["Poder, Pablo","qtb-shft-fyv"],5:["Denapole, Lara","noc-sdea-zwe"],6:["Sandaza, Raquel","fwt-wxnh-jww"],7:["Minnucci, Devora Yanina","fjq-dtgx-zsz"],8:["Nocera, David Andres","sgr-vzbe-gbi"],9:["Antonietta, Laura Marcela","xwm-gsub-qgw"],10:["De La Nava, Andrea","gnn-zpuk-pjn"],11:["Ferreyra, Manuela","fga-jnyj-shp"],12:["Zudaire Marinoni, Maria Natalia","qsj-wmyt-zxq"],13:["Berardi, Marcos Miguel","vuh-keuf-qwu"],14:["Efimenco, Cinthya","ewh-wjej-grp"],15:["Heredia, Maria Celeste","bhk-qcee-bpe"],16:["Hissa, Roberto","fdp-vtqv-je"],17:["Parma, Santiago","qrr-ziyd-dcj"],18:["Tassara Hidalgo, Ronald Andres","vjc-xaut-imm"],19:["Medawar Aguilar, Victoria","moe-opqu-ixm"],20:["García, Selene","mru-uksc-wyi"],21:["Morente, Nicolás Alberto","jcx-prtt-ier"],22:["Venturi Coria, Débora Marilén","uyo-xzwb-xtt"],23:["Saez, Juan Jose","euk-qxhd-gom"],24:["Medina, Marta Valeria","xzj-afoq-vsr"],25:["Borrás, Sebastián","ciw-dpbp-zhw"],26:["García Márquez, Federico José","wys-byrm-vcv"],27:["Charchaflie, Aldana","ikx-dtbu-xdk"],28:["Romero Calderon, Alexis Mariana","yxy-xvop-jnj"],29:["Ortubia, Ezequiel","cvd-zyov-nea"],30:["Malgarejo, Antonio Emilio","pfs-ypht-kux"],31:["Di Battista, Diego","fek-qjvf-ocn"],32:["Buscarolo, Jorge Fabian","ade-ozvf-dzb"],33:["Torres Quintero, Mariano Ezequiel","zma-kuvj-gkx"],34:["Ramos, María Alejandra","dab-jtud-udf"],35:["Viñals Soria, Maria Montserrat","hfu-cgjo-xtr"],36:["Rey, Barbara","qhv-kaat-hmn"],37:["Lucero Arrua, Gloria Natalia","cni-zhod-cov"],38:["Menchini, Macarena","vke-qebp-rge"],39:["Brandani, Elizabeth","syi-jaco-ysg"],40:["Luco Alemán, Vanina Maria del Milagro","kpk-hkev-wsf"],41:["Sanchez, Brenda Danila","erz-fexw-kfm"],42:["Quintas, Luis Martín","qwc-cihy-pwj"]};
+var g=document.getElementById("grid"),q=document.getElementById("q"),n=document.getElementById("none");
+W.forEach(function(w,i){var k=("0"+(i+1)).slice(-2),d=D[i+1],e=document.createElement("div");e.className="c";
+e.dataset.s=(k+" "+(d?d[0]:"")).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");
+e.innerHTML="<h2>Comisión "+k+"</h2><div class='d'>"+(d?d[0]:"")+"</div><div class='b'>"+(d?"<a class='m' target='_blank' rel='noopener' href='https://meet.google.com/"+d[1]+"'>Meet</a>":"")+"<a class='w' target='_blank' rel='noopener' href='https://chat.whatsapp.com/"+w+"'>WhatsApp</a></div>";g.appendChild(e)});
+q.addEventListener("input",function(){var v=q.value.trim().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,""),s=0;
+[].forEach.call(g.children,function(e){var ok=!v||e.dataset.s.indexOf(v)>-1;e.style.display=ok?"":"none";if(ok)s++});n.style.display=s?"none":"block"});
+</script>
+</body>
+</html>
